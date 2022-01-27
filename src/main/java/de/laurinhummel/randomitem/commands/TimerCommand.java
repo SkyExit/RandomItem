@@ -14,7 +14,7 @@ public class TimerCommand implements CommandExecutor {
         Player player = (Player) sender;
         TimerManager timer = Main.getPlugin().getTimer();
         if(args.length != 1) {
-            player.sendMessage(ChatColor.RED + "Please do /timer <start/play/resume/pause/stop/reset>");
+            player.sendMessage(ChatColor.RED + "Missing Arguments! Please do /timer <start/play/resume/pause/stop/reset>");
             return true;
         }
         switch (args[0]) {
