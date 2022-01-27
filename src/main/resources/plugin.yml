@@ -4,3 +4,7 @@ main: de.laurinhummel.randomitem.Main
 api-version: 1.16
 authors: [ SkyExit ]
 description: Gives you every x seconds a random item!
+
+commands:
+  timer:
+    description: Timer Command
