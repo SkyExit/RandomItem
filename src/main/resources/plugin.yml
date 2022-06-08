@@ -1,5 +1,5 @@
 name: RandomItem
-version: '1.2.1'
+version: '1.2.2'
 main: de.laurinhummel.randomitem.Main
 api-version: 1.16
 authors: [ SkyExit ]

@@ -12,8 +12,17 @@ import java.util.Random;
 public class RandomItemManager {
 
     Random random = new Random();
+    private static final List<Material> items = new ArrayList<>();
 
     public ItemStack getRandomItem() {
-        return new ItemStack(Main.items.get(random.nextInt(Main.items.size())));
+        return new ItemStack(items.get(random.nextInt(items.size())));
+    }
+
+    public final void createMaterialList() {
+        for (Material material : Material.values()) {
+            if(material.isItem()) {
+                items.add(material);
+            }
+        }
     }
 }

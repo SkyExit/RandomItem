@@ -17,7 +17,6 @@ import java.util.List;
 public final class Main extends JavaPlugin {
     private static Main plugin;
     private TimerManager timerManager;
-    public static List<Material> items = new ArrayList<>();
 
     @Override
     public void onLoad() {
@@ -30,10 +29,9 @@ public final class Main extends JavaPlugin {
         PluginManager pluginManager = Bukkit.getPluginManager();
 
         getCommand("timer").setExecutor(new TimerCommand());
-
         pluginManager.registerEvents(new BarManager(), this);
 
-        items.addAll(Arrays.<Material>stream(Material.values()).toList());
+        getItemManager().createMaterialList();
 
         FileConfiguration config = getPlugin().getConfig();
         getConfig();
@@ -45,9 +43,7 @@ public final class Main extends JavaPlugin {
     }
 
     @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }
+    public void onDisable() { }
 
     public static Main getPlugin() {
         return plugin;
